@@ -1,0 +1,30 @@
+<div class="container" style="margin-top:30px;">
+
+    <div class="form-group">
+        <input type="text" (input)="newFirstName=$event.target.value" class="form-control" placeholder="Nome">
+    </div>
+    
+    <div class="form-group">
+        <input type="text" (input)="newLastName=$event.target.value" class="form-control" placeholder="Sobrenome">
+    </div>
+    
+    <div class="form-group">
+        <input type="number" (input)="newAge=$event.target.value" class="form-control" placeholder="Idade">
+    </div>
+    
+    <div class="form-group">
+        <select id="excludableSelect" (change)="newExcludable=$event.target.options[$event.target.selectedIndex].value" class="form-control">
+            <option selected value="null">Convidado removivel?</option>
+            <option value="true">Sim</option>
+            <option value="false">Nao</option>
+        </select>
+    </div>
+    
+    <div>
+        <button type="submit" (click)="inclui()" class="btn btn-success" style="float:right">Incluir</button>
+    </div>
+
+</div>
+
+
+

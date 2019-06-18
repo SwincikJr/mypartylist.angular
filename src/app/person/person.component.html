@@ -1,0 +1,12 @@
+<div class="container" style="margin-top: 30px;">
+    <h2 style="text-align: center">Observacoes de {{ person.firstName }} {{ person.lastName }}</h2>
+
+    <div class="form-group" style="margin-top: 30px;">
+        <textarea class="form-control" (input)="compara($event.target)">{{ person.details }}</textarea>
+    </div>
+
+    <div>
+        <button id="saveButton" class="btn btn-success" style="float: right" (click)="changeDetails()"  disabled>Salvar</button>
+    </div>
+
+</div>

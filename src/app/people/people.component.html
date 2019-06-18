@@ -1,0 +1,20 @@
+<div>
+  <includer-component (incluir)="onInclui($event)"></includer-component>
+</div>
+
+<div class="container" style="margin-top:25px;">
+  <h2 style="text-align: center">Lista de Convidados</h2>
+</div>
+
+<div class="container" style="border-bottom: 1px solid">
+
+  <div *ngFor="let person of people" style="border-top: 1px solid;padding: 15px;">
+    <div>
+      <a [title]="'Ver detalhes de ' + person.firstName" [routerLink]="['/convidado', person.id]">
+          {{ person.firstName }} {{ person.lastName }}, {{ person.age }} anos.
+      </a>
+      <button *ngIf="person.excludable" (click)="excluir(person.id)" class="btn btn-warning btn-sm" style="float: right">Excluir {{ person.firstName }}</button>
+    </div>
+  </div>
+
+</div>
