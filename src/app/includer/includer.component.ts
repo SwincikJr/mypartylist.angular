@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { PeopleService } from '../people.service';
 
 @Component({
     selector: 'includer-component',
@@ -10,10 +11,11 @@ export class IncluderComponent {
     
     @Output() incluir = new EventEmitter();
 
+    constructor(private peopleService: PeopleService){}
+
     newFirstName = ""
     newLastName = ""
     newAge = -1
-    newId = 4
     newExcludable = 'true'
 
     inclui() {
@@ -31,7 +33,7 @@ export class IncluderComponent {
         }
 
         let newPerson = {
-            id: this.newId++,
+            id: this.peopleService.nextId(),
             firstName: this.newFirstName,
             lastName: this.newLastName,
             age: this.newAge,

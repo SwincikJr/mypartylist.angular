@@ -5,6 +5,8 @@ export class PeopleService {
 
   constructor() { }
 
+  IdAtual = 4;
+
   people = [
     {
         id: 1,
@@ -57,6 +59,11 @@ export class PeopleService {
   changeDetails(index, newDetails)
   {
     this.people[index].details = newDetails
+  }
+
+  nextId()
+  {
+    return this.IdAtual++
   }
 
 }
